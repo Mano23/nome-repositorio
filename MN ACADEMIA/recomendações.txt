@@ -1,0 +1,37 @@
+Tableas
+{
+  Cliente, Caderneta
+}
+
+Cliente
+{
+  IdCliente INT
+  NomeCliente VARCHAR(30)
+  RuaCliente  VARCHAR(30)
+  NumeroCliente  INT
+  BairroCliente VARCHAR(30)
+  CidadeCliente VARCHAR(30)
+  CpfCliente VARCHAR(12)
+  RGCliente VARCHAR(12)
+  AtivoCliente BIT
+}
+
+Caderneta
+{
+  IdCaderneta INT
+  IdClienteCaderneta INT
+  ProdutoCaderneta VARCHAR(60)
+  QuantidadeCaderneta REAL
+  ValorCaderneta REAL
+  DataCaderneta DATE
+  Pago bit
+  IdVendedorCliente INT
+  TelefoneCliente VARCHAR(15)
+  CelularCliente VARCHAR(15)
+}
+
+Vendedor
+{
+  IdVendedor INT
+  NomeVendedor varchar(30)
+}

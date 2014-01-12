@@ -1,0 +1,22 @@
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\BASE.mdf
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\BASE_log.ldf
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\MN CADERNETA.exe.config
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\MN CADERNETA.exe
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\MN CADERNETA.pdb
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.CadastroBase.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.CadastroCliente.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.CadastroVendedor.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.Caderneta.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.EditarUsuario.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.FrmPrincipal.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.Login.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.Properties.Resources.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.Relatorios.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN ACADEMIA.csproj.GenerateResource.Cache
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN CADERNETA.exe
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN CADERNETA.pdb
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN_CADERNETA.Caixa.resources
+C:\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN ACADEMIA.csprojResolveAssemblyReference.cache
+E:\Programas\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\bin\Debug\MN CADERNETA.exe.config
+E:\Programas\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN CADERNETA.exe
+E:\Programas\Prog. VS 2010\MN ACADEMIA\MN CADERNETA\obj\x86\Debug\MN CADERNETA.pdb
