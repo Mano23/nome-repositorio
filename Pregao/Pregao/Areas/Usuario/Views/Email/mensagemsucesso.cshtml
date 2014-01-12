@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+    var nome = ViewBag.nome;
+}
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Enviar", "Envia", "Email") </h3>
+        </div>
+        <div class="panel-body">
+
+
+            <div class="row-fluid">
+
+                <div class="alert alert-success">
+                    <h1>@nome,</h1>
+                    <p>
+                        sua mensagem foi enviada com sucesso!!
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

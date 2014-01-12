@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>BinbinComponentModelDataAnnotations</id>
+    <version>1.0.0.39621</version>
+    <title>BinbinComponentModelDataAnnotations</title>
+    <authors>lotosbin</authors>
+    <owners>lotosbin</owners>
+    <licenseUrl>http://license_url_here_or_delete_this_line/</licenseUrl>
+    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>mvc validate dataanotation</description>
+    <summary>mvc validate dataanotation</summary>
+    <releaseNotes />
+    <copyright>Copyright 2011</copyright>
+    <language />
+    <tags>Tag1 Tag2</tags>
+  </metadata>
+</package>

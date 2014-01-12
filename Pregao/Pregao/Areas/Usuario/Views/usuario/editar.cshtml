@@ -1,0 +1,139 @@
+﻿@model Pregao.Areas.Usuario.Models.UsuariosEditarModel
+
+@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Editar", "editar", "usuario")</h3>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+    
+                @Html.HiddenFor(x => x.UsuarioID)
+                <fieldset>
+                    <legend></legend>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, new { @class = "control-label " })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Nome, new { placeholder = "Nome", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Nome)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*<div class="form-group">
+                        @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Email)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>*@
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cpf, new { @class = "control-label" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Cpf, new { placeholder = "Cpf", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Cpf)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Rua, new { @class = "control-label " })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Rua, new { placeholder = "Rua", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Rua)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Numero, new { @class = "control-label " })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Numero, new { placeholder = "Numero", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Numero)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Bairro, new { @class = "control-label " })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Bairro, new { placeholder = "Bairro", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Bairro)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cep, new { @class = "control-label" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Cep, new { placeholder = "Cep", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Cep)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cidade, new { @class = "control-label" })
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.Cidade, new { placeholder = "Cidade", @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.Cidade)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <p>
+                        <input type="submit" value="Salvar" class="btn btn-success" />
+                    </p>
+                </fieldset>           
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,188 @@
+﻿@model Pregao.Dominio.Usuarios
+<!-- Modal Login e Cadastro-->
+<div class="modal" id="myModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Casa de Carnes Schiassi</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="well">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#login2" data-toggle="tab">Entrar</a></li>
+                        <li><a href="#create" data-toggle="tab">Inscreva-se</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+
+
+                        <div class="tab-pane active in" id="login2">
+                            @using (Html.BeginForm("Logar", "Home", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true) 
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Email)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.PasswordFor(model => model.Senha, new { placeholder = "Senha", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Senha)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-success">Entrar</button>                                            
+                                            @*@Html.ActionLink("Administrador", "Index", "HomeAdmin", new { area = "Admin" }, null)
+                                            @Html.ActionLink("Parceiros", "iniciousuario", "usuario", new { area = "Usuario" }, null)*@
+                                        </div>
+                                    </div>
+
+
+                                </fieldset>
+                            }
+                            @*</form>*@
+                        </div>
+
+
+                        <div class="tab-pane fade" id="create">
+                            @*<form class="form-horizontal" role="form">*@
+                            @using (Html.BeginForm("cadastrar", "Home", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true) 
+                                <fieldset>
+                                    <legend></legend>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Nome, new { placeholder = "Nome", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Nome)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Cpf, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Cpf, new { placeholder = "Cpf", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Cpf)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>                              
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Rua, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Rua, new { placeholder = "Rua", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Rua)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Numero, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Numero, new { placeholder = "Numero", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Numero)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Bairro, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Bairro, new { placeholder = "Bairro", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Bairro)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Cep, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Cep, new { placeholder = "Cep", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Cep)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Cidade, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Cidade, new { placeholder = "Cidade", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Cidade)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Email)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Senha, new { placeholder = "Senha", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Senha)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+
+                                    @*<div class="form-group">
+                                        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                        <div class="col-md-7">
+                                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Email)
+                                        </div>
+                                        @Html.Label("*", new { @style = "color:red" })
+                                    </div>
+                                    *@
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-primary">Inscreva-se</button>
+                                        </div>
+                                    </div>
+
+
+                                </fieldset>
+                            }
+                            @*</form>*@
+
+                        </div>
+                    </div>
+                    <!--well-->
+                </div>
+                <!--modal-body-->
+            </div>
+            <!--modal-content-->
+        </div>
+        <!--modal-dialog-->
+    </div>
+    <!--modal-->
+</div>
+<!-- /Modal Login e Cadastro -->
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

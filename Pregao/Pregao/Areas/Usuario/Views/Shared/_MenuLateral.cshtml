@@ -1,0 +1,35 @@
+﻿<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">MENU</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            <ul class="nav ">
+                <li class="nav-header">Pregões aberto</li>
+                <li>@Html.ActionLink("Novos", "leiloesaberto", "usuario")</li>
+                <li>@Html.ActionLink("Participando", "participando", "usuario")</li>
+                <li class="nav-header">Listar Pregões</li>
+                <li>@Html.ActionLink("Encerrados", "encerrados", "usuario")</li>
+                <li>@Html.ActionLink("Cancelados", "cancelados", "usuario")</li>
+                <li>@Html.ActionLink("Que venci", "venci", "usuario")</li>
+                <li class="nav-header">Mensagens</li>
+                <li>@Html.ActionLink("Enviar", "Envia","Email")</li>
+            </ul>            
+            <ul class="nav">
+                <li class="nav-header">Meus Dados</li>
+                <li>@Html.ActionLink("Editar", "editar", "usuario")</li>                
+            </ul>
+            @*<hr />*@
+            @*<a href="#">Termo de Compromisso</a>*@
+            
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Pregao.Dominio.Lance>
+
+@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+    var leilao = (Pregao.Dominio.Leilao)ViewBag.Leilao;
+}
+
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Que venci", "venci", "usuario") / Lances</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseUm">Informações do Pregão @leilao.LeilaoID (R$ @leilao.Valor).
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseUm" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>O presente leilão que se iniciou na data @leilao.DataCadastro com a finalidade da aquisição do animal @leilao.NomeProduto.ToUpper() no valor de R$ @leilao.Valor foi encerrado na data @leilao.DataFinalizacao.</p>
+                            <p>Observação: @leilao.Observacao</p>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.Count() == 0)
+                {
+                    <br />            
+                    <div class="alert alert-warning">
+                        Pregão sem lances!
+                    </div>                    
+                }
+                else
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDois">Lances
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseDois" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="bs-example">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>@Html.Label("N° Pregão")</th>
+                                                    <th>@Html.Label("Usuario")</th>
+                                                    <th>@Html.Label("Valor")</th>
+                                                    <th>@Html.Label("Data do lance")</th>
+                                                    <th>@Html.Label("Status")</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.LeilaoID)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.NomeUsuario)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Valor)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.DataCadastro)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.enmStatus)
+                                                        </td>
+                                                        @*<td>
+                                                @Html.ActionLink("Ver Lances", "ver", new { id = item.LeilaoID }, new { @class = "btn btn-success" })
+                                            </td>*@
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

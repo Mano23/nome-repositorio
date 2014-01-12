@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Enviar", "Envia", "Email") </h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>Envie uma mensagem para o Açougue Schiassi</h3>
+                @using (Html.BeginForm("Envia","Email"))
+                {
+                    <div class="form-group">
+                        @Html.Label("Assunto")
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBox("Assunto", null, new {@class="form-control" })
+                            </div>                            
+                        </div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.Label("Mensagem")
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextArea("Mensagem", null, new {@class="form-control" })
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <input type="submit" value="Enviar" />
+                }
+            </div>
+        </div>
+    </div>
+</div>

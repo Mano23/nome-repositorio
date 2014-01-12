@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Pregao.Dominio.Leilao>
+
+@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="col-md-12 ">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Que venci", "venci", "usuario")</h3>
+            </div>
+            <div class="panel-body">
+                @if (Model.Count() == 0)
+                {
+                    <br />            
+                    <div class="alert alert-warning">
+                        Não tem nenhum pregão que venci!                
+                    </div>                    
+                }
+                else
+                {
+                    <fieldset>
+                        <legend></legend>
+                        <div class="bs-example">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>@Html.Label("N° Pregão")</th>
+                                        <th>@Html.Label("Animal")</th>
+                                        <th>@Html.Label("Lance inicial")</th>
+                                        <th>@Html.Label("Início do pregão")</th>
+                                        <th>@Html.Label("Fim do pregão")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LeilaoID)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NomeProduto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Valor)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DataCadastro)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DataFinalizacao)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Ver Lances", "ver", new { id = item.LeilaoID }, new { @class = "btn btn-success" })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+    
+}

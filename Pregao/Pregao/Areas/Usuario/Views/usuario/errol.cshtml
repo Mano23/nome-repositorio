@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 class="panel-title">@Html.ActionLink("Leiloes", "iniciousuario", "usuario") / @Html.ActionLink("Erro lance", "errol", "usuario")</h3>
+    </div>
+    <div class="panel-body">
+        <div class="well">
+            <h1>ATENÇÃO!</h1>
+            <div class="row-fluid">
+                <div class="well">
+                    <h1>Erro no lance!</h1>
+                    <p>
+                        O campo valor tem que ser maior que 0 e menor que o ultimo lance dado. Não se esqueça de preencher o campo valor.
+                    </p>
+                    <p>
+                        @Html.ActionLink("Voltar", "leiloesaberto", "usuario", null, new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>

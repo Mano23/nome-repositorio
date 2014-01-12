@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pregao.RepositorioADO.Contexto" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Contexto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pregao.RepositorioADO.LanceRepositorio" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAEAAAgAAAAGAAAIBQQAACAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>LanceRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pregao.RepositorioADO.LeilaoRepositorio" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAgAAAAGAgIABQQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LeilaoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pregao.RepositorioADO.PermissaoRepositorio" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAgAAAAGAAAABQQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PermissaoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pregao.RepositorioADO.ProdutoRepositorio" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAgAAAAGAAAABQQAICAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProdutoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pregao.RepositorioADO.UsuarioRepositorio" Collapsed="true">
+    <Position X="5.25" Y="1.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAgAAAAGAAAABQQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

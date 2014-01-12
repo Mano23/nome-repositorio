@@ -1,0 +1,71 @@
+﻿@model Pregao.Models.LoginModel
+@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = Layout = "~/Views/Shared/_Layout2.cshtml";
+    //var erro = ViewBag.msg_Erro;
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Home", "index", "Home") / @Html.ActionLink("Entrar", "entrar", "Home")</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well" id="login2">
+                @using (Html.BeginForm("Logar", "Home", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true) 
+                    <fieldset>
+                        <legend></legend>
+                        @*@if (erro != null)
+                        {
+                            <div class="alert alert-warning">
+                                @ViewBag.msg_Erro
+                            </div> 
+                        }*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-1" })
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", @class = "form-control" })
+                            </div>
+                            <div class="col-md-5">
+                                @Html.ValidationMessageFor(model => model.Email)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-1" })
+                            <div class="col-md-5">
+                                @Html.PasswordFor(model => model.Senha, new { placeholder = "Senha", @class = "form-control" })
+                            </div>
+                            <div class="col-md-5">
+                                @Html.ValidationMessageFor(model => model.Senha)
+                                @Html.Label("*", new { @style = "color:red" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-success btn-lg">Entrar</button>
+                                @Html.ActionLink("Cadastrar", "cadastrar", null, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

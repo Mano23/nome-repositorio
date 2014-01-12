@@ -1,0 +1,78 @@
+﻿@model Pregao.Dominio.Leilao
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Leilao</legend>
+
+        <div class="editor-label">
+            @Html.Label("Id Produto")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.ProdutoID, (IEnumerable<SelectListItem>)ViewBag.DropProdutos, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ProdutoID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Valor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Valor)
+            @Html.ValidationMessageFor(model => model.Valor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataCadastro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataCadastro)
+            @Html.ValidationMessageFor(model => model.DataCadastro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataFinalizacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataFinalizacao)
+            @Html.ValidationMessageFor(model => model.DataFinalizacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observacao)
+            @Html.ValidationMessageFor(model => model.Observacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Status, new {@rows="5" })
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,123 @@
+﻿@model Pregao.Dominio.Lance
+
+@{
+    ViewBag.Title = "Casa de Carnes Schiassi";
+    Layout = "~/Areas/Usuario/Views/Shared/_Layout.cshtml";
+    var lance = (Pregao.Dominio.Lance)ViewBag.Lances;
+    var leilao = (Pregao.Dominio.Leilao)ViewBag.Leilao;
+}
+
+
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.ActionLink("Pregão", "iniciousuario", "usuario") / @Html.ActionLink("Novos", "leiloesaberto", "usuario") / Lance</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseUm">Informações do Pregão @leilao.LeilaoID (R$ @leilao.Valor).
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseUm" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>O presente leilão que iniciou na data @leilao.DataCadastro, possui a finalidade da aquisição do animal @leilao.NomeProduto.ToUpper() no valor de R$ @leilao.Valor até a data @leilao.DataFinalizacao.</p>
+                            <p>Observação: @leilao.Observacao</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                @if (lance != null)
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDois">Menor Lance no momento é R$ @lance.Valor .
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseDois" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>@lance.NomeUsuario.ToUpper() deu um lance no valor de R$ @lance.Valor no dia @lance.DataCadastro.</p>
+                                @*<p>Observação: @lance.Observacao</p>*@
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <br />
+                    <div class="alert alert-info">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Pregão sem lance!
+                    </div>
+                }
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTres">Dar lance
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTres" class="panel-collapse collapse in">
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-md-9">
+                                    @using (Html.BeginForm("lanceget", "usuario", FormMethod.Post, new { @class = "form-horizontal", @role = "form", id = leilao.LeilaoID }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true)                            
+                                        <div class="well">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Valor, new { @class = "control-label col-md-2" })
+                                                    <div class="col-md-4">
+                                                        @Html.EditorFor(model => model.Valor, new { @class = "form-control" })                                                        
+                                                        @Html.ValidationMessageFor(model => model.Valor)
+                                                    </div>
+                                                    @Html.Label("*", new { @style="color:red"})
+
+                                                </div>
+                                            </div>
+                                            <br />
+                                            @*<div class="row">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Observacao, new { @class = "control-label col-md-2" })
+                                                    <div class="col-sm-9">
+                                                        @Html.TextAreaFor(model => model.Observacao, new { @rows = "5", @class = "form-control" })
+                                                        @Html.ValidationMessageFor(model => model.Observacao)
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                        <p>
+                                            <input type="submit" value="Dar lance" class="btn btn-primary btn-lg" />
+                                        </p>                            
+                            
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+            @Html.ActionLink("Voltar na lista", "leiloesaberto", "usuario", null, new { @class = "btn btn-info" })
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
